@@ -21,7 +21,6 @@ async function client(
     if (response.status === 401) {
       queryCache.clear()
       await auth.logout()
-      // refresh the page for them
       window.location.assign(window.location)
       return Promise.reject({message: 'Please re-authenticate.'})
     }
